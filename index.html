@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plataforma Educativa: Aprende JavaScript</title>
+<style>
+    body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        background: linear-gradient(to bottom right, #e0f7fa, #f1f8e9);
+        color: #333;
+    }
+
+    /* CABECERA */
+    header {
+        background: #00796b;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 30px;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    }
+
+    header img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: white;
+        padding: 5px;
+    }
+
+    header h1 {
+        font-size: 26px;
+        margin-left: 15px;
+    }
+
+    /* MENÚ */
+    nav {
+        background-color: #004d40;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 20px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #ffcc80;
+    }
+
+    /* BUSCADOR */
+    .buscador {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .buscador input[type="text"] {
+        padding: 10px;
+        width: 300px;
+        border: 2px solid #00796b;
+        border-radius: 5px;
+    }
+
+    .buscador button {
+        padding: 10px 20px;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+
+    .buscador button:hover {
+        background-color: #004d40;
+    }
+
+    /* CONTENIDO PRINCIPAL */
+    .contenedor {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .lateral, .contenido {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        padding: 20px;
+    }
+
+    .lateral h3 {
+        color: #00796b;
+    }
+
+    .contenido h2 {
+        color: #004d40;
+        margin-bottom: 20px;
+    }
+
+    /* BOTONES DE INFORMACIÓN */
+    button.info {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px 15px;
+        background-color: #26a69a;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+    button.info:hover {
+        background-color: #00796b;
+    }
+
+    /* MODALES */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-contenido {
+        background-color: #ffffff;
+        padding: 25px;
+        width: 65%;
+        border-radius: 10px;
+        text-align: left;
+        box-shadow: 0 0 10px #000;
+        animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .cerrar {
+        float: right;
+        color: #e53935;
+        font-size: 22px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .cerrar:hover {
+        color: #b71c1c;
+    }
+
+    /* PIE DE PÁGINA */
+    footer {
+        background-color: #004d40;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+    .lateral ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .lateral li {
+        margin: 8px 0;
+    }
+
+    .lateral a {
+        color: #00796b;
+        text-decoration: none;
+    }
+
+    .lateral a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<!-- CABECERA -->
+<header>
+    <div style="display:flex; align-items:center;">
+        <a href="https://www.javascript.com/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Logo JS">
+        </a>
+        <h1>Plataforma Educativa: Aprende JavaScript</h1>
+    </div>
+</header>
+
+<!-- NAVEGACIÓN -->
+<nav>
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">Documentación</a>
+    <a href="https://www.w3schools.com/js/" target="_blank">Tutoriales</a>
+    <a href="#">Ejemplos</a>
+    <a href="#">Ejercicios</a>
+    <a href="#">Contacto</a>
+</nav>
+
+<!-- BUSCADOR -->
+<div class="buscador">
+    <input type="text" placeholder="Buscar tema...">
+    <button onclick="alert('Función de búsqueda simulada 😊')">Buscar</button>
+</div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div class="contenedor">
+    <div class="lateral">
+        <h3>📚 Recursos útiles</h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">MDN JavaScript</a></li>
+            <li><a href="https://www.w3schools.com/js/" target="_blank">W3Schools JS</a></li>
+            <li><a href="https://www.javascript.com/" target="_blank">Sitio oficial</a></li>
+        </ul>
+        <h3>💡 Consejos</h3>
+        <p>Practica todos los días y usa la consola del navegador para probar tu código.</p>
+    </div>
+
+    <div class="contenido">
+        <h2>Temas de JavaScript</h2>
+        <button class="info" onclick="abrirModal('definicion')">¿Qué es JavaScript?</button>
+        <button class="info" onclick="abrirModal('tipos')">Tipos de Datos</button>
+        <button class="info" onclick="abrirModal('operadores')">Operadores y Expresiones</button>
+        <button class="info" onclick="abrirModal('variables')">Variables</button>
+        <button class="info" onclick="abrirModal('estructura')">Estructuras de Control</button>
+        <button class="info" onclick="abrirModal('funciones')">Funciones</button>
+        <button class="info" onclick="abrirModal('objetos')">Objetos, Propiedades y Métodos</button>
+        <button class="info" onclick="abrirModal('entrada')">Entrada y Salida de Datos</button>
+    </div>
+
+    <div class="lateral">
+        <h3>🧠 Aprende más</h3>
+        <p>JavaScript es el lenguaje del navegador. ¡Con él puedes crear experiencias increíbles!</p>
+        <h4>🔗 Enlaces internos</h4>
+        <ul>
+            <li><a href="#">Historia del lenguaje</a></li>
+            <li><a href="#">Sintaxis básica</a></li>
+            <li><a href="#">Ejercicios prácticos</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- PIE DE PÁGINA -->
+<footer>
+    <p>© 2025 Plataforma Educativa de JavaScript | Desarrollado por Ximena Castro</p>
+</footer>
+
+<!-- MODALES (Ventanas de información) -->
+<div id="definicion" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal('definicion')">&times;</span>
+        <h2>¿Qué es JavaScript?</h2>
+        <p>JavaScript es un lenguaje de programación que permite crear interactividad en las páginas web. Es utilizado tanto en el lado del cliente (navegador) como en el servidor (Node.js).</p>
+    </div>
+</div>
+
+<div id="tipos" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal('tipos')">&times;</span>
+        <h2>Tipos de Datos</h2>
+        <ul>
+            <li>String → texto</li>
+            <li>Number → números</li>
+            <li>Boolean → verdadero o falso</li>
+            <li>Array → listas</li>
+            <li>Object → agrupaciones de valores</li>
+            <li>Undefined y Null</li>
+        </ul>
+    </div>
+</div>
+
+<div id="operadores" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal('operadores')">&times;</span>
+        <h2>Operadores y Expresiones</h2>
+        <p>Operadores matemáticos: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code><br>
+        Operadores de comparación: <code>==</code>, <code>===</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code></p>
+    </div>
+</div>
+
+<div id="variables" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal('variables')">&times;</span>
+        <h2>Variables</h2>
+        <p>Las variables almacenan información. Se declaran con <code>var</code>, <code>let</code> o <code>const</code>.<br>
+        Ejemplo: <code>let nombre = "Ximena";</code></p>
+    </div>
+</div>
+
+<div id="estructura" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal('estructura')">&times;</span>
+        <h2>Estructuras de Control</h2>
+        <p>Controlan el flujo del programa: <br>
+        <code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>, <code>switch</code>.</p>
+    </div>
+</div>
+
+<div id="funciones" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal('funciones')">&times;</span>
+        <h2>Funciones</h2>
+        <p>Las funciones son bloques de código que realizan tareas específicas.</p>
+        <pre><code>function saludar() {
+  alert("¡Hola, mundo!");
+}</code></pre>
+    </div>
+</div>
+
+<div id="objetos" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal('objetos')">&times;</span>
+        <h2>Objetos, Propiedades y Métodos</h2>
+        <pre><code>let perro = {
+  nombre: "Tomás",
+  edad: 7,
+  ladrar() {
+    alert("Guau!");
+  }
+}</code></pre>
+    </div>
+</div>
+
+<div id="entrada" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal('entrada')">&times;</span>
+        <h2>Entrada y Salida de Datos</h2>
+        <p><strong>Entrada:</strong> <code>prompt("¿Cómo te llamas?");</code><br>
+        <strong>Salida:</strong> <code>alert("Hola mundo");</code> o <code>console.log("Hola");</code></p>
+    </div>
+</div>
+
+<!-- SCRIPT FUNCIONAL -->
+<script>
+    function abrirModal(id) {
+        document.getElementById(id).style.display = "flex";
+    }
+    function cerrarModal(id) {
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
+</body>
+</html>
